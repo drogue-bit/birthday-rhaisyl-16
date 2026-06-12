@@ -46,8 +46,6 @@ def get_movies(site_name):
     try:
         html = requests.get(url, timeout=REQUEST_TIMEOUT).text
 
-        with open("letterboxd.html", "w", encoding="utf-8") as f:
-            f.write(html)
 
         soup = BeautifulSoup(html, "html.parser")
         movies = []
@@ -72,8 +70,17 @@ def get_movies(site_name):
 
 @app.route("/")
 def home():
-    stats = get_stats("rhaisyl")
-    movies = get_movies("rhaisyl")
+    try:
+        stats = get_stats("rhaisyl")
+    except Exception as e:
+        print("Stats error:", e)
+        stats = {}
+
+    try:
+        movies = get_movies("rhaisyl")
+    except Exception as e:
+        print("Movies error:", e)
+        movies = []
 
     return render_template(
         "index.html",
