@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>broooo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" >
+     <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}?v=1">
+</head>
+<body>
+<img src="{{ url_for('static', filename='eva-title.png') }}" alt="hehe" align="center" width="900" height="600">
+    <div class="container">
+        <h5>sorry im a bit late i had no clue how to make this....</h5>
+<p> so this is a simple website crawler which i've wanted to make ever since i saw that a yt video that blew my mind. cool no?</p>
+        <div class="stats">
+            <h1>neocities <font color="pink">:heart:</font></h1><br>
+            <div class="card">
+                <h2>views</h2>
+                <p>{{ stats['views'] }}</p>
+            </div>
+
+            <div class="card">
+                <h2>followers</h2>
+                <p>{{ stats['followers'] }}</p>
+            </div>
+
+            <div class="card">
+                <h2>updates</h2>
+                <p>{{ stats['updates'] }}</p>
+            </div>
+
+        </div>
+        <div class="movie-grid">
+{% for movie in movies %}
+    <div class="movie-card">
+        {{ movie }}
+    </div>
+{% endfor %}
+</div>
+    </div>
+
+</body>
+</html>
