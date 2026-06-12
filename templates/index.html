@@ -11,7 +11,7 @@
         <h5>sorry im a bit late i had no clue how to make this....</h5>
 <p> so this is a simple website crawler which i've wanted to make ever since i saw that a yt video that blew my mind. cool no?</p>
         <div class="stats">
-            <h1><a href="https://rhaisyl.neocities.org/">neocities</a><font color="pink"> :heart:</font></h1><br>
+            <h1>neocities <font color="pink"><a href="https://rhaisyl.neocities.org/">:heart:</a></font></h1><br>
             <div class="card">
                 <h2>views</h2>
                 <p>{{ stats['views'] }}</p>
@@ -31,9 +31,9 @@
         <div class="movie-grid">
 <h1>movies you've watched <font color="pink"><a hfref="https://letterboxd.com/rhaisyl/films/">:heart:</a></font></h1><br>
     <div class="movie-card">
-        <ul>{% for movie in movies %}
+        <ol type="1">{% for movie in movies %}
         <li>{{ movie }}</li>
-        {% endfor %}</ul>
+        {% endfor %}</ol>
     </div>
 </div>
     </div>
